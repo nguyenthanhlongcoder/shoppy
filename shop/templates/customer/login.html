@@ -1,0 +1,32 @@
+
+{% extends 'main_layout.html' %}
+{% from "_formhelpers.html" import render_field %}
+
+{% block content %}
+{% with messages =
+get_flashed_messages(with_categories=true) %}
+
+
+<div class="container-fluid mt-5 pt-5 ">
+<div class="flashes">
+  {% for category, message in messages %}
+  <div class="alert alert-{{category}}">{{message}}</div>
+  {% endfor %}
+</div>
+
+	<h4 class="card-title mt-3 text-center">Login</h4>
+    <form method="post">
+    {{form.csrf_token}}
+      {{render_field(form.email, class="form-control", placeholder="Email", type="email")}}
+      {{render_field(form.password, class="form-control", placeholder="Password")}}
+      {{form.submit(class="btn-success form-control")}}
+      <p class="text-center">Doesnt have an account? <a href="{{url_for('customer_register')}}">Register</a> </p>                                                                 
+    </form>
+</div>
+	{% endwith %}
+{% endblock content %}
+
+
+
+
+

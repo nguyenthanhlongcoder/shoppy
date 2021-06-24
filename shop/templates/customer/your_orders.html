@@ -1,0 +1,81 @@
+{% extends 'main_layout.html' %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid mt-5 pt-5">
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">
+    Orders
+  </h1>
+ 
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3 row">
+      <h6 class="m-0 font-weight-bold text-primary col">Database Orders</h6>
+
+    
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Sr</th>
+              <th>Invoice</th>
+              <th>Date</th>
+            <th>Total</th>
+              
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Sr</th>
+              <th>Invoice</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            {% for order in orders %}
+             
+             {% for key, product in order.orders.items() %}
+           
+      {% endfor %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{order.invoice}}</td>
+              <td>{{order.date_created.replace(microsecond=0)}}</td>
+              {% if order.status == 'delivering' %}
+                            <td><a class="btn btn-warning" href="/orders/{{order.invoice}}">{{order.status|capitalize}}</a></td>
+                {% elif order.status == 'paid' %}
+                              <td><a class="btn btn-success" href="/orders/{{order.invoice}}">{{order.status|capitalize}}</a></td>
+                {% elif order.status == 'cancel' %}
+                                              <td><a class="btn btn-secondary" href="/orders/{{order.invoice}}">{{order.status|capitalize}}</a></td>
+    {% else %}
+              <td><a class="btn btn-danger" href="/orders/{{order.invoice}}">{{order.status|capitalize}}</a></td>
+
+              {% endif %}
+            </tr>
+            </div>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- End of Main Content -->
+
+ 
+</div>
+
+{% endblock content %}
+
+

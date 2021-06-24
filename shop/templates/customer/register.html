@@ -1,0 +1,55 @@
+{% extends 'main_layout.html' %}
+
+
+{% from "_formhelpers.html" import render_field %}
+
+{% block content %}
+
+<div class="container pt-5 px-5">
+{% with messages =
+get_flashed_messages(with_categories=true) %}
+
+<div class="flashes">
+  {% for category, message in messages %}
+  <div class="alert alert-{{category}}">{{message}}</div>
+  {% endfor %}
+</div>
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	
+	<form method="post" class="px-5 text-center">
+    {{form.csrf_token}}
+            
+            {{render_field(form.name, class="form-control", placeholder="Full name")}}
+       
+            {{render_field(form.username, class="form-control", placeholder="Username")}}
+       
+           
+                    {{render_field(form.email, class="form-control", placeholder="Email", type="email")}}
+
+      
+            
+                    {{render_field(form.password, class="form-control", placeholder="Password")}}
+
+      
+           
+                    {{render_field(form.confirm, class="form-control", placeholder="Confirm password")}}
+
+     
+           
+                {{render_field(form.address, class="form-control", placeholder="Address")}}
+
+      
+            
+                    {{render_field(form.contact, class="form-control", placeholder="Phone")}}
+
+        {{form.submit(class="btn-success form-control")}}
+        </div> <!-- form-group// -->      
+        <p class="text-center">Already have account? <a href="{{url_for('customerLogin')}}">Log In</a> </p>                                                                 
+    </form>
+
+</div> 
+{% endwith %}
+{% endblock content %}
+
+
+

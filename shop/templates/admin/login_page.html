@@ -1,0 +1,23 @@
+{% extends 'admin_layout.html' %}
+{% block content %}
+ {% with messages =
+get_flashed_messages(with_categories=true) %}
+
+
+{% from "_formhelpers.html" import render_field %}
+
+<div class="container-fluid">
+<div class="flashes">
+  {% for category, message in messages %}
+  <div class="alert alert-{{category}}">{{message}}</div>
+  {% endfor %}
+</div>
+  <form method=post enctype="multipart/form-data">
+    {{ render_field(form.email, class="form-control") }}
+    {{ render_field(form.password, class="form-control") }}
+    <input type="submit" value="Login" class="form-control btn btn-info"/>
+  
+</form>
+</div>
+
+{% endwith %}{% endblock content %}

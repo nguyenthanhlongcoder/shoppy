@@ -1,0 +1,20 @@
+{% extends 'admin_layout.html' %}
+{% block content %}
+
+{% from "_formhelpers.html" import render_field %}
+<div class="container">
+  <form method=post enctype="multipart/form-data">
+      {{ render_field(form.name, class="form-control") }}
+
+    {{ render_field(form.username, class="form-control") }}
+    {{ render_field(form.email, class="form-control") }}
+    {{ render_field(form.password, class="form-control") }}
+    {{ render_field(form.confirm, class="form-control") }}
+    {{ render_field(form.accept_tos, class="form-control") }}
+    <input type="file" class="mb-2" name="photo"/>
+    <input type="submit" value="Regsiter" class="form-control btn btn-info"/>
+</form>
+</div>
+
+
+{% endblock content %}

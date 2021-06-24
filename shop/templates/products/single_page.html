@@ -1,0 +1,151 @@
+{% extends 'main_layout.html' %}
+
+{% block content %}
+
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+            <p class="lead font-weight-bold">{{product.name}}</p>
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+       
+        <div class=" col-md-6 mb-4 carousel slide" id="carouselExampleControls"  data-ride="carousel">
+<div class="carousel-inner">
+    <div class="carousel-item active">
+          <img src="{{url_for('static', filename='img/' + product.image_1)}}" class="img-fluid" alt="{{product.name}}">
+    </div>
+    <div class="carousel-item">
+          <img src="{{url_for('static', filename='img/' + product.image_2)}}" class="img-fluid" alt="{{product.name}}">
+    </div>
+    <div class="carousel-item">
+          <img src="{{url_for('static', filename='img/' + product.image_3)}}" class="img-fluid" alt="{{product.name}}">
+    </div>
+  </div>
+  <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon "></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" ></span>
+  </a>
+</div>
+
+    
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1">{{product.brand.name}}</span>
+              </a>
+              <a href="">
+                <span class="badge blue mr-1">New</span>
+              </a>
+              <a href="">
+                <span class="badge red mr-1">Discount {{product.discount}}%</span>
+              </a>
+            </div>
+
+            <p class="lead">
+            {% if product.discount > 0 %}
+             <span class="mr-1">
+                <del>{{product.price}} VNĐ</del>
+              </span>
+            {% endif %}
+             
+              <span>{{product.price * (100 - product.discount) / 100}} VNĐ</span>
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{product.description}}</p>
+
+            <form class="d-flex justify-content-left" action="{{url_for('AddCart')}}" method="post">
+              <!-- Default input -->
+              <input type="hidden" value="{{product.id}}" name="product_id"/>
+              <input type="number" value="1" name="quanlity" min="1" max="{{product.stock}}" aria-label="Search" class="form-control" style="width: 100px">
+              {% set colors = product.colors.split(',') %}
+              <select name="colors" class="form-control ml-1"  id="colors" style="width: 100px">
+              {% for color in colors %}
+              {% set col = color.split(':') %}
+              <option value="{{col[0]}}">{{col[0].strip()| capitalize}}</option>
+              {% endfor %}
+              </select>
+              <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+          <h4 class="my-4 h4">Additional information</h4>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
+            voluptates,
+            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+{% endblock content %}
+
+

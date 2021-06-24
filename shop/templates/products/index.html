@@ -1,0 +1,562 @@
+{% extends 'main_layout.html' %} {% block content %}
+<!--Carousel Wrapper-->
+<div
+  id="carousel-example-1z"
+  class="carousel slide carousel-fade pt-4"
+  data-ride="carousel"
+>
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carousel-example-1z"
+      data-slide-to="0"
+      class="active"
+    ></li>
+    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <!--First slide-->
+    <div class="carousel-item active">
+      <div
+        class="view"
+        style="
+          background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <!-- Mask & flexbox options-->
+        <div
+          class="
+            mask
+            rgba-black-strong
+            d-flex
+            justify-content-center
+            align-items-center
+          "
+        >
+          <!-- Content -->
+          <div class="text-center white-text mx-5 wow fadeIn">
+            <h1 class="mb-4">
+              <strong>Shoppy - Tech Shop</strong>
+            </h1>
+
+            <p>
+              <strong>Best & free guide of responsive web design</strong>
+            </p>
+
+            <p class="mb-4 d-none d-md-block">
+              <strong
+                >The most comprehensive tutorial for the Bootstrap 4. Loved by
+                over 500 000 users. Video and written versions available. Create
+                your own, stunning website.</strong
+              >
+            </p>
+
+            <a
+              href="/"
+              class="btn btn-outline-white btn-lg"
+              >Get Started
+              <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+          </div>
+          <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
+      </div>
+    </div>
+    <!--/First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+      <div
+        class="view"
+        style="
+          background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%283%29.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <!-- Mask & flexbox options-->
+        <div
+          class="
+            mask
+            rgba-black-strong
+            d-flex
+            justify-content-center
+            align-items-center
+          "
+        >
+          <!-- Content -->
+          <div class="text-center white-text mx-5 wow fadeIn">
+            <h1 class="mb-4">
+              <strong>Learn Bootstrap 4 with MDB</strong>
+            </h1>
+
+            <p>
+              <strong>Best & free guide of responsive web design</strong>
+            </p>
+
+            <p class="mb-4 d-none d-md-block">
+              <strong
+                >The most comprehensive tutorial for the Bootstrap 4. Loved by
+                over 500 000 users. Video and written versions available. Create
+                your own, stunning website.</strong
+              >
+            </p>
+
+            <a
+              target="_blank"
+              href="https://mdbootstrap.com/education/bootstrap/"
+              class="btn btn-outline-white btn-lg"
+              >Start free tutorial
+              <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+          </div>
+          <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
+      </div>
+    </div>
+    <!--/Second slide-->
+
+    <!--Third slide-->
+    <div class="carousel-item">
+      <div
+        class="view"
+        style="
+          background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%285%29.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <!-- Mask & flexbox options-->
+        <div
+          class="
+            mask
+            rgba-black-strong
+            d-flex
+            justify-content-center
+            align-items-center
+          "
+        >
+          <!-- Content -->
+          <div class="text-center white-text mx-5 wow fadeIn">
+            <h1 class="mb-4">
+              <strong>Learn Bootstrap 4 with MDB</strong>
+            </h1>
+
+            <p>
+              <strong>Best & free guide of responsive web design</strong>
+            </p>
+
+            <p class="mb-4 d-none d-md-block">
+              <strong
+                >The most comprehensive tutorial for the Bootstrap 4. Loved by
+                over 500 000 users. Video and written versions available. Create
+                your own, stunning website.</strong
+              >
+            </p>
+
+            <a
+              target="_blank"
+              href="https://mdbootstrap.com/education/bootstrap/"
+              class="btn btn-outline-white btn-lg"
+              >Start free tutorial
+              <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+          </div>
+          <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
+      </div>
+    </div>
+    <!--/Third slide-->
+  </div>
+  <!--/.Slides-->
+
+  <!--Controls-->
+  <a
+    class="carousel-control-prev"
+    href="#carousel-example-1z"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carousel-example-1z"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+  
+  <!-- Navbar brand -->
+  <form class="input-group" action="{{url_for('result')}}">
+      <div class="form-outline">
+        <input
+          class="form-control mt-2"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          name="q"/>
+          
+      </div>
+        <button id="search-button" type="button" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+       </button>
+  </form>
+  
+ <!-- Collapsible content -->
+</nav>
+<!--/.Navbar-->
+
+<!--Section: Products v.3-->
+<section class="text-center mb-4">
+  <!--Grid row-->
+  <div class="row wow fadeIn">
+    {% if brand %} {% for b in brand.items %}
+    <!--Grid column-->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <!--Card-->
+      <a href="{{url_for('single_page', id = b.id)}}">
+        <div class="card">
+          <!--Card image-->
+          <div class="view overlay">
+            <img
+              src="{{url_for('static', filename='img/' + b.image_1)}}"
+              class="card-img-top"
+              alt="{{b.name}}"
+            />
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body text-left">
+            <!--Category & Title-->
+
+            <h5>
+              <strong>
+                <a href="{{url_for('single_page', id = b.id)}}" class="dark-grey-text">{{b.name}} </a>
+              </strong>
+            </h5>
+
+            <h4 class="">
+              {% if b.discount > 0 %}
+              <del>{{b.price}} VNĐ </del>
+              <span class="badge badge-pill danger-color"
+                >Giảm giá {{b.discount}} %</span
+              >{% else %}
+              <span>{{b.price}} VNĐ </span>
+              {% endif %}
+            </h4>
+            {% if b.discount > 0 %}
+            <h4 class="font-weight-bold">
+              {{b.price * (100 - b.discount) / 100}} VNĐ
+            </h4>
+            {% endif %}
+            <form class="d-flex justify-content-left" action="{{url_for('AddCart')}}" method="post">
+              <!-- Default input -->
+              <input type="hidden" value="{{b.id}}" name="product_id"/>
+              <input type="hidden" value="1" name="quanlity" min="1" max="{{b.stock}}" aria-label="Search" class="form-control" style="width: 100px">
+              {% set colors = b.colors.split(',') %}
+              <select name="colors" class="form-control ml-1" style="width: 0px; visibility: hidden;">
+              {% for color in colors%}
+              {% set col = color.split(':') %}
+              <option value="{{col[0]}}">{{col[0]|capitalize}}</option>
+              {% endfor %}
+              </select>
+              <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+          </div>
+          <!--Card content-->
+        </div>
+      </a>
+
+      <!--Card-->
+    </div>
+    <!--Grid column-->
+    {% endfor %} {% elif get_cat_prod %} {% for get_cat in get_cat_prod.items %}
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <!--Card-->
+      <a href="{{url_for('single_page', id = get_cat.id)}}">
+        <div class="card">
+          <!--Card image-->
+          <div class="view overlay">
+            <img
+              src="{{url_for('static', filename='img/' + get_cat.image_1)}}"
+              class="card-img-top"
+              alt="{{get_cat.name}}"
+            />
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body text-left">
+            <!--Category & Title-->
+
+            <h5>
+              <strong>
+                <a href="{{url_for('single_page', id = get_cat.id)}}" class="dark-grey-text">{{get_cat.name}} </a>
+              </strong>
+            </h5>
+
+            <h4 class="">
+              
+              {% if get_cat.discount > 0 %}
+              <del>{{get_cat.price}} VNĐ </del>
+              <span class="badge badge-pill danger-color"
+                >Giảm giá {{get_cat.discount}} %</span
+              >{% else %}
+              <span>{{get_cat.price}} VNĐ </span>
+              {% endif %}
+            </h4>
+            {% if get_cat.discount > 0 %}
+            <h4 class="font-weight-bold">
+              {{get_cat.price * (100 - get_cat.discount) / 100}} VNĐ
+            </h4>
+            {% endif %}
+            <form class="d-flex justify-content-left" action="{{url_for('AddCart')}}" method="post">
+              <!-- Default input -->
+              <input type="hidden" value="{{get_cat.id}}" name="product_id"/>
+              <input type="hidden" value="1" name="quanlity" min="1" max="{{get_cat.stock}}" aria-label="Search" class="form-control" style="width: 100px">
+              {% set colors = get_cat.colors.split(',') %}
+              <select name="colors" class="form-control ml-1" style="width: 0px; visibility: hidden;">
+              {% for color in colors%}
+              {% set col = color.split(':') %}
+              <option value="{{col[0]}}">{{col[0]|capitalize}}</option>
+              {% endfor %}
+              </select>
+              <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+          </div>
+          <!--Card content-->
+        </div>
+      </a>
+
+      <!--Card-->
+    </div>
+    {% endfor %} {% else %} {% for product in products.items %}
+    <!--Grid column-->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <!--Card-->
+
+      <a href="{{url_for('single_page', id = product.id)}}">
+        <div class="card">
+          <!--Card image-->
+          <div class="view overlay">
+            <img
+              src="{{url_for('static', filename='img/' + product.image_1)}}"
+              class="card-img-top"
+              alt="{{product.name}}"
+            />
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--Card image-->
+
+          <!--Card content-->
+          <div class="card-body text-left">
+            <!--Category & Title-->
+
+            <h5>
+              <strong>
+                <a href="{{url_for('single_page', id = product.id)}}" class="dark-grey-text">{{product.name}} </a>
+              </strong>
+            </h5>
+
+            <h4 class="">
+              {% if product.discount > 0 %}
+                            <del>{{product.price}} VNĐ </del>
+
+              <span class="badge badge-pill danger-color"
+                >Giảm giá {{product.discount}} %</span
+              >{% else %}
+                            <span>{{product.price}} VNĐ </span>
+
+              {% endif %}
+            </h4>
+            {% if product.discount > 0 %}
+            <h4 class="font-weight-bold">
+              {{product.price * (100 - product.discount) / 100}} VNĐ
+            </h4>
+            {% endif %}
+              <form class="d-flex justify-content-left" action="{{url_for('AddCart')}}" method="post">
+              <!-- Default input -->
+              <input type="hidden" value="{{product.id}}" name="product_id"/>
+              <input type="hidden" value="1" name="quanlity" min="1" max="{{product.stock}}" aria-label="Search" class="form-control" style="width: 100px">
+              {% set colors = product.colors.split(',') %}
+              <select name="colors" class="form-control ml-1" style="width: 0px; visibility: hidden;">
+              {% for color in colors%}
+              {% set col = color.split(':') %}
+              <option value="{{col[0]}}">{{col[0]|capitalize}}</option>
+              {% endfor %}
+              </select>
+              <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+          </div>
+          <!--Card content-->
+        </div>
+      </a>
+
+      <!--Card-->
+    </div>
+
+    <!--Grid column-->
+    {% endfor %} {% endif %}
+  </div>
+  <!--Grid row-->
+</section>
+<!--Section: Products v.3-->
+
+<!--Pagination-->
+<nav class="d-flex justify-content-center wow fadeIn">
+  <ul class="pagination pg-blue">
+    <!--Arrow left-->
+
+    {% if products and products.total > 8%} {% if products.has_prev %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('home', page=products.prev_num)}}"
+        aria-label="Previous"
+      >
+        Previous
+      </a>
+    </li>
+    {% endif %} {% for page_num in products.iter_pages(left_edge=1,
+    right_edge=2, left_current = 1, right_current =2) %} {% if products.page ==
+    page_num %}
+    <li class="page-item active">
+      <a class="page-link" href="{{url_for('home', page=page_num)}}"
+        >{{page_num}}
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" href="{{url_for('home', page=page_num)}}"
+        >{{page_num}}
+      </a>
+    </li>
+    {% endif %} {% endfor%} {% if products.has_next %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('home', page=products.next_num)}}"
+        aria-label="Next"
+      >
+        Next
+      </a>
+    </li>
+    {% endif %} {% elif get_cat_prod and get_cat_prod.total > 8 %} {% if
+    get_cat_prod.has_prev %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('get_category', id=get_cat.id, page=get_cat_prod.prev_num)}}"
+        aria-label="Previous"
+      >
+        Previous
+      </a>
+    </li>
+    {% endif %} {% for page_num in get_cat_prod.iter_pages(left_edge=1,
+    right_edge=2, left_current = 1, right_current =2) %} {% if get_cat_prod.page
+    == page_num %}
+    <li class="page-item active">
+      <a
+        class="page-link"
+        href="{{url_for('get_category', id=get_cat.id, page=page_num)}}"
+        >{{page_num}}
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('get_category', id=get_cat.id, page=page_num)}}"
+        >{{page_num}}
+      </a>
+    </li>
+    {% endif %} {% endfor%} {% if get_cat_prod.has_next %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('get_category', id=get_cat.id, page=get_cat_prod.next_num)}}"
+        aria-label="Next"
+      >
+        Next
+      </a>
+    </li>
+
+    {% endif %} {% elif brand and brand.total > 8 %} {% if brand.has_prev %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('get_brand', id = get_b.id, page=brand.prev_num)}}"
+        aria-label="Previous"
+      >
+        Previous
+      </a>
+    </li>
+    {% endif %} {% for page_num in brand.iter_pages(left_edge=1, right_edge=2,
+    left_current = 1, right_current =2) %} {% if brand.page == page_num %}
+    <li class="page-item active">
+      <a
+        class="page-link"
+        href="{{url_for('get_brand', id = get_b.id, page=page_num)}}"
+        >{{page_num}}
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('get_brand', id = get_b.id, page=page_num)}}"
+        >{{page_num}}
+      </a>
+    </li>
+    {% endif %} {% endfor%} {% if brand.has_next %}
+    <li class="page-item">
+      <a
+        class="page-link"
+        href="{{url_for('get_brand', id = get_b.id, page=brand.next_num)}}"
+        aria-label="Next"
+      >
+        Next
+      </a>
+    </li>
+    {% endif %} {% endif %}
+  </ul>
+</nav>
+<!--Pagination-->
+{% endblock content %}

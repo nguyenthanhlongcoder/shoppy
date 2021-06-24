@@ -1,0 +1,39 @@
+{% extends 'admin_layout.html' %} {% block content %}
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      {% include "_messages.html" %} {% if updatebrand %}
+      <form action="" method="POST">
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          value="{{updatebrand.name}}"
+        />
+        <div class="row mt-2">
+                  <input type="submit" value="Update brand" class="btn btn-info m-2" />
+               <a href="{{url_for('brands')}}" class="btn btn-danger m-2">Cancel</a>
+
+        </div>
+      </form>
+      {% else %}
+      <form action="" method="POST">
+        <input type="text" name="category" class="form-control"  value="{{updatecategory.name}}"/>
+        <input
+          type="submit"
+          value="Update category"
+          class="btn btn-info mt-2"
+        />
+                      <a href="{{url_for('categories')}}" class="btn btn-danger mt-2">Cancel</a>
+
+      </form>
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

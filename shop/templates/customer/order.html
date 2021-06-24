@@ -1,0 +1,152 @@
+{% extends 'main_layout.html' %} {% block content %}
+
+<!-- Heading -->
+<h2 class="my-5 h2 text-center pt-5">Invoice Num: {{invoice}}</h2>
+
+<!--Grid row-->
+<div class="row">
+  <!--Grid column-->
+  <div class="col-md-8 mb-4">
+    <!--Card-->
+    <div class="card">
+      <!--Card content-->
+      <form class="card-body">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-12 mb-2">
+            <!--firstName-->
+            <div class="md-form">
+              <input
+                type="text"
+                id="fullName"
+                class="form-control"
+                value="{{customer.name}}"
+              />
+              <label for="fullName" class="">Full name</label>
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+        <!--Username-->
+        <div class="md-form input-group pl-0 mb-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input
+            type="text"
+            class="form-control py-0"
+            placeholder="Username"
+            aria-describedby="basic-addon1"
+            value="{{customer.username}}"
+          />
+        </div>
+
+        <!--email-->
+        <div class="md-form mb-5">
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            placeholder="youremail@example.com"
+            value="{{customer.email}}"
+          />
+          <label for="email" class="">Email</label>
+        </div>
+        <div class="md-form mb-5">
+          <input
+            type="text"
+            id="phone"
+            class="form-control"
+            placeholder="+8400000000"
+            value="{{customer.contact}}"
+          />
+          <label for="phone" class="">Phone</label>
+        </div>
+
+        <!--address-->
+        <div class="md-form mb-5">
+          <input
+            type="text"
+            id="address"
+            class="form-control"
+            placeholder="1234 Main St"
+            value="{{customer.address}}"
+          />
+          <label for="address" class="">Address</label>
+        </div>
+
+        <!--address-2-->
+        <div class="md-form mb-5">
+          <input
+            type="text"
+            id="address-2"
+            class="form-control"
+            placeholder="Apartment or suite"
+          />
+          <label for="address-2" class="">Address 2 (optional)</label>
+        </div>
+     
+      </form>
+  
+    </div>
+    <!--/.Card-->
+  </div>
+  <!--Grid column-->
+
+  <!--Grid column-->
+  <div class="col-md-4 mb-4">
+    <!-- Heading -->
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted">Cart</span>
+      <span class="badge badge-secondary badge-pill"
+        >{{orders.orders.items()|length}}</span
+      >
+    </h4>
+
+    <!-- Cart -->
+    <ul class="list-group mb-3 z-depth-1">
+      {% for key, product in orders.orders.items() %} {% set discount =
+      (1-product.discount/100) * product.price|float %}
+      {% set total = grandTotal - discount %}
+      <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+          <h6 class="my-0">{{product.name}}</h6>
+          <small class="text-muted">Color: {{product.color|capitalize}}</small>
+          <br />
+          <small class="text-muted"
+            >Quanlity: {{product.quanlity|capitalize}}</small
+          >
+        </div>
+        <span class="text-muted"
+          ><del>{{product.price}}</del><strong> {{discount }} VNĐ</strong></span
+        >
+      </li>
+      {% endfor %}
+
+    
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Tạm tính (VND)</span>
+        <strong>{{grandTotal}} VNĐ</strong>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Giảm giá (VND)</span>
+        <strong>{{discount}} VNĐ</strong>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Tổng (VND)</span>
+        <strong>{{grandTotal - discount}} VNĐ</strong>
+      </li>
+        
+    </ul>
+    <!-- Cart -->
+
+
+  </div>
+  <!--Grid column-->
+</div>
+<!--Grid row-->
+
+{% endblock content %}
